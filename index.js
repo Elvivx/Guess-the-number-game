@@ -6,13 +6,11 @@ const playAgain = document.querySelector('.again-btn')
 const gameInfo = document.querySelector('.gameInfo')
 const trials = document.querySelector('.score')
 const highscore = document.querySelector('.highscore')
-const gameOver = document.querySelector('.game-over')
-const gameOverBtn = document.querySelector('.game-over button')
 
 
 // logic
 let user = input.value
-let tries = 20
+let tries = 15
 let high = 0
 checkBtn.onclick = () => {
   play()
@@ -20,9 +18,7 @@ checkBtn.onclick = () => {
 playAgain.onclick = () =>{
     over()
 }
-gameOverBtn.onclick = () => {
-    over()
-}
+
 // functions
 function over(){
         num.textContent = '?'
@@ -71,6 +67,9 @@ function play(){
             }
         }
     if(tries === 0){
-        gameOver.style.display = 'block'
+        gameInfo.textContent = '🥲😢 game-over'
+        playAgain.style.display = 'block'
+        body.style.background = 'red'
+        checkBtn.style.display = 'none'
     }
 }
