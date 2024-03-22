@@ -7,19 +7,19 @@ const gameInfo = document.querySelector('.gameInfo')
 const trials = document.querySelector('.score')
 const highscore = document.querySelector('.highscore')
 
-
 // logic
 let user = input.value
 let tries = 15
 let high = 0
 checkBtn.onclick = () => {
-  play()
+    play()
 }
 playAgain.onclick = () =>{
     over()
 }
 
 // functions
+let randomNum = Math.floor(Math.random() * 6) + 1; // generates a random number between 1 and 6 (inclusive).
 function over(){
         num.textContent = '?'
         checkBtn.style.display = "block"
@@ -29,11 +29,10 @@ function over(){
         body.style.background = 'black'
         high = 0
         gameInfo.textContent = '🤔❔ Start guessing.....'
-        gameOver.style.display = 'none'
+        window.location.reload();
+
 }
 function play(){
-      let randomNum = Math.floor(Math.random() * 5) + 1;
-    console.log(randomNum)
     if(input.value){
             if (input.value == randomNum) {
                 console.log("Congratulations! You got it right.")
