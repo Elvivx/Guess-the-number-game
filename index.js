@@ -72,3 +72,8 @@ function play(){
         checkBtn.style.display = 'none'
     }
 }
+input.onkeydown = (e) =>{
+    if(e.key === 'Enter'){
+       play()
+    }
+}
